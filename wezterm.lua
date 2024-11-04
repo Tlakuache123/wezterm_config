@@ -17,15 +17,13 @@ table.insert(launch_menu, {
 config.font = wezterm.font("JetBrains Mono")
 config.color_scheme = "Catppuccin Mocha"
 config.window_padding = {
-	left = 4,
-	right = 4,
-	top = 4,
 	bottom = 0,
 }
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.6
+config.window_background_opacity = 1.0
 config.win32_system_backdrop = "Acrylic"
 config.integrated_title_buttons = {}
+config.window_decorations = "RESIZE"
 -- Tab settings
 config.use_fancy_tab_bar = false
 config.tab_max_width = 12
@@ -41,10 +39,7 @@ config.colors = {
 ]]
 --
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
-
-function tab_title(tab_info)
+local function tab_title(tab_info)
 	local title = tab_info.tab_title
 	-- if the tab title is explicitly set, take that
 	if title and #title > 0 then
